@@ -1,8 +1,10 @@
-package linguagemDeProgramacaoII.exercicio5.RMI.cliente;
+package exercicio5.RMI.cliente;
 
 import java.net.MalformedURLException;
 import java.rmi.Naming;
 import java.rmi.RemoteException;
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
 import java.util.LinkedList;
 import java.util.Scanner;
 import javax.naming.Context;
@@ -20,8 +22,11 @@ public class CalculadoraClient {
                                                          * algo.
                                                          */
             
-            Context con = new InitialContext();
-            calc = (Calculadora) con.lookup("rmi://127.0.0.1/calculadora");
+            Registry registro = LocateRegistry.getRegistry("localhost",4444);
+            calc = (Calculadora) registro.lookup("calculadoraRMI");
+            
+            //Context con = new InitialContext();
+            //calc = (Calculadora) con.lookup("rmi://localhost/calculadora");
             
             /*calc = (Calculadora) Naming.lookup(url);     /* Faz o objeto calc apontar ou,
                                                           * mais precisamente, procurar e
@@ -114,8 +119,6 @@ public class CalculadoraClient {
             
             
             
-        }catch(NamingException e){
-            System.out.println("Erro no URL: " + e.getMessage());
         }catch(RemoteException e){
             System.out.println("Erro remoto: " + e.getMessage());
         }catch(Exception e){

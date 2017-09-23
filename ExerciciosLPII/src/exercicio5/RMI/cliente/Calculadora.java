@@ -1,6 +1,5 @@
-package linguagemDeProgramacaoII.exercicio5.RMI.cliente;
+package exercicio5.RMI.cliente;
 
-import linguagemDeProgramacaoII.exercicio5.RMI.servidor.*;
 import java.rmi.*;
 
 public interface Calculadora extends Remote {

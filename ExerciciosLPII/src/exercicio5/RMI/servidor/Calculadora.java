@@ -1,4 +1,4 @@
-package linguagemDeProgramacaoII.exercicio5.RMI.servidor;
+package exercicio5.RMI.servidor;
 
 import java.rmi.*;
 
