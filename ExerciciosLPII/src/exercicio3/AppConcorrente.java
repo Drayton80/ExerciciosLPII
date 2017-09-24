@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package linguagemDeProgramacaoII.exercicio3;
+package exercicio3;
 
 import static java.lang.Math.sqrt;
 import java.util.Random;
@@ -77,6 +77,7 @@ public class AppConcorrente extends Thread {
         for(i = 0; i < tamanho; i++){
             for(j = 0; j < tamanho; j++){
                  thread[i][j].start();
+                 
             }
         }
         //this.join();

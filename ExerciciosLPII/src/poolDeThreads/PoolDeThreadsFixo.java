@@ -1,9 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package linguagemDeProgramacaoII.poolDeThreads;
+package poolDeThreads;
 
 import java.util.concurrent.*;
 
@@ -12,6 +7,15 @@ public class PoolDeThreadsFixo {
         ExecutorService fixo = Executors.newFixedThreadPool(6);
         ExecutorService cache = Executors.newCachedThreadPool();
         ExecutorService temporal = Executors.newScheduledThreadPool(6);
+        
+        //Com interface Runnable:
+        Exibidor h = new Exibidor(12);
+        Thread t = new Thread(h);
+        t.start();
+        
+        //Com extends Thread:
+        ExibidorT thread = new ExibidorT(12);
+        thread.start();
         
         for(int i = 1, j = 1; i <= 20; i++, j++){
             if(i <= 6){
