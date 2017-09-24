@@ -1,9 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package exercicio5.RMI.servidor;
+package exercicio5.RMI.calculadora;
 
 import java.net.MalformedURLException;
 import java.rmi.Naming;
@@ -23,12 +18,13 @@ public class CalculadoraServer {
             Calculadora calculadora = new CalculadoraImpl();    /* Instanciando um objeto do tipo CalculadoraImpl
                                                                      * que implementa interface Calculadora        */
             
-            LocateRegistry.createRegistry(123);
+            //Registry registro = LocateRegistry.createRegistry(1099);
             //registro.rebind("calculadoraRMI", calculadora);
 
             //Context name = new InitialContext();
-            //name.rebind("rmi:///calculadora", calculadora);
+            //name.rebind("rmi:///calculadora", calculadora); //Deu errado
             
+            LocateRegistry.createRegistry(1099);
             Naming.rebind("rmi:///calculadora" , calculadora);      /* Associa ou registra um nome (nesse caso,
                                                                      * calculadora) para um Objeto Remoto o qual
                                                                      * pode ser usado depois para procurar esse

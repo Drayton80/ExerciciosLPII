@@ -1,4 +1,4 @@
-package exercicio5.RMI.cliente;
+package exercicio5.RMI.calculadora;
 
 import java.rmi.*;
 

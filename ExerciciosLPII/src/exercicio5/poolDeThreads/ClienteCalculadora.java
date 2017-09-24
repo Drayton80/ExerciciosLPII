@@ -1,4 +1,4 @@
-package linguagemDeProgramacaoII.exercicio5.poolDeThreads;
+package exercicio5.poolDeThreads;
 
 /**
  *
