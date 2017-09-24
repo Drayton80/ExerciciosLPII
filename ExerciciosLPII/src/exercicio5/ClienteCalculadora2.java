@@ -1,4 +1,4 @@
-package linguagemDeProgramacaoII.exercicio5;
+package exercicio5;
 
 /**
  *
@@ -145,6 +145,7 @@ public class ClienteCalculadora2 {
                         
                     case 5:
                         sair = true;
+                        break;
                         
                     default:
                         System.out.println("Escolha inválida!!!");

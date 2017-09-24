@@ -1,9 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package linguagemDeProgramacaoII.exercicio5;
+package exercicio5;
 
 /**
  *
@@ -36,79 +31,80 @@ public class ServidorCalculadora2 {
                 
                 escolha = Integer.parseInt(in_message.nextLine());
                 
-                numeros_com_espaco = in_message.nextLine();
-                numeros_sem_espaco = numeros_com_espaco.split(" ");
-                
-                numeros = new int[numeros_sem_espaco.length];
-                
-                for(int i = 0; i < numeros.length; i++){
-                    numeros[i] = Integer.parseInt(numeros_sem_espaco[i]); 
-                }
-                
-                switch(escolha){
-                    case 1:
-                        for(int i = 0; i < numeros.length; i++){
-                            soma = soma + numeros[i];
-                        }
-                        
-                        out_message.println(soma);
-                        break;
-                        
-                    case 2:
-                        for(int i = 0; i < numeros.length; i++){
-                            multiplicacao = multiplicacao * numeros[i];
-                        }
-                        
-                        out_message.println(multiplicacao);
-                        break;
+                if(escolha != 5){
+                    numeros_com_espaco = in_message.nextLine();
+                    numeros_sem_espaco = numeros_com_espaco.split(" ");
                     
-                    //case 3:
-                    //    subescolha = Integer.parseInt(in_message.nextLine());
-                    //    
-                    //    switch(subescolha){
-                    //        case 1:
-                    //            soma = 0;
-                    //            
-                    //            numeros_com_espaco = in_message.nextLine();
-                    //            numeros_sem_espaco = numeros_com_espaco.split(" ");
-                    //            
-                    //            numeros = new int[numeros_sem_espaco.length];
-                    //            
-                    //            for(int i = 0; i < numeros.length; i++){
-                    //                numeros[i] = Integer.parseInt(numeros_sem_espaco[i]); 
-                    //            }
-                    //            
-                    //            for(int i = 0; i < numeros.length; i++){
-                    //                soma = soma + numeros[i];
-                    //            }
-                    //            
-                    //            System.out.println(soma);
-                    //            
-                    //            out_message.println(soma);
-                    //            break;
-                    //            
-                    //        case 2:
-                    //            
-                    //        case 3:
-                    //            break;
-                    //    }
-                    //    
-                    //    break;
-                    //    
-                    case 4:
-                        break;
-                        
-                    case 5:
-                        sair = true;
-                        break;
-                }
+                    numeros = new int[numeros_sem_espaco.length];
+                
+                    for(int i = 0; i < numeros.length; i++){
+                        numeros[i] = Integer.parseInt(numeros_sem_espaco[i]); 
+                    }
+                    
+                    switch(escolha){
+                        case 1:
+                            for(int i = 0; i < numeros.length; i++){
+                                soma = soma + numeros[i];
+                            }
 
+                            out_message.println(soma);
+                            break;
+
+                        case 2:
+                            for(int i = 0; i < numeros.length; i++){
+                                multiplicacao = multiplicacao * numeros[i];
+                            }
+
+                            out_message.println(multiplicacao);
+                            break;
+
+                        //case 3:
+                        //    subescolha = Integer.parseInt(in_message.nextLine());
+                        //    
+                        //    switch(subescolha){
+                        //        case 1:
+                        //            soma = 0;
+                        //            
+                        //            numeros_com_espaco = in_message.nextLine();
+                        //            numeros_sem_espaco = numeros_com_espaco.split(" ");
+                        //            
+                        //            numeros = new int[numeros_sem_espaco.length];
+                        //            
+                        //            for(int i = 0; i < numeros.length; i++){
+                        //                numeros[i] = Integer.parseInt(numeros_sem_espaco[i]); 
+                        //            }
+                        //            
+                        //            for(int i = 0; i < numeros.length; i++){
+                        //                soma = soma + numeros[i];
+                        //            }
+                        //            
+                        //            System.out.println(soma);
+                        //            
+                        //            out_message.println(soma);
+                        //            break;
+                        //            
+                        //        case 2:
+                        //            
+                        //        case 3:
+                        //            break;
+                        //    }
+                        //    
+                        //    break;
+                        //    
+                        case 4:
+                            break;
+
+                    }
+
+                }else{
+                    sair = true;
+                    in.close();
+                    out.close();
+                    s.close();
+                    break;   
+                }
+                
             }
-            
-            in.close();
-            out.close();
-            s.close();
-            servidor.close();
             
         }catch(IOException n){
             System.out.println("Houve algum problema de conexão!!!");

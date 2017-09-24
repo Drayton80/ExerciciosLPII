@@ -5,7 +5,6 @@ package exercicio5.poolDeThreads;
  * @author drayton80
  */
 
-import linguagemDeProgramacaoII.exercicio5.*;
 import java.net.ServerSocket;
 import java.io.*;
 import java.net.*;
@@ -146,6 +145,7 @@ public class ClienteCalculadora {
                         
                     case 5:
                         sair = true;
+                        break;
                         
                     default:
                         System.out.println("Escolha inválida!!!");
